@@ -1,0 +1,13 @@
+<div class="results">
+    <h1 class="nameTitle">Results</h1>
+        <% apiRes.forEach ( api => { %>
+            <div class="resultsContainer">
+             <form class="resultsForm" action="/favorites/new/<%= api.id %>" method="POST"> 
+    
+                <a class="resLink" id="resultsLink" href="/players/<%= api.id %>"> <%= api.first_name %> <%= api.last_name %> </a> 
+                 <span class="teamResults"> <%= api.team.full_name %> </span>
+                <input type="submit" value="Add to Faves" class="seasonSubmit resultsSubmit">
+            </form>
+        </div>
+        <% }) %>  
+    </div> 

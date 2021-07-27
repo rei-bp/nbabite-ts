@@ -1,0 +1,84 @@
+<div class="detailStats">
+
+    <h1 class="nameTitle"><%= first %> <%= last %> </h1>
+
+    <div class='statContainer'>
+
+       
+
+    <table class='table'>
+    <caption>SEASON AVERAGE</caption>
+    <thead>
+        <tr>
+            <th class="thStat">YEAR</th>
+            <th class="min">MIN</th>
+            <th class="min">GP</th>
+            <th class="min">FGM</th>
+            <th class="min">FGA</th>
+            <th class="min">FG3M</th>
+            <th class="min">FG3A</th>
+            <th class="min">FTM</th>
+            <th class="min">FTA</th>
+            <th class="min">OREB</th>
+            <th class="min">DREB</th>
+            <th class="min">REB</th>
+            <th class="min">AST</th>
+            <th class="min">STL</th>
+            <th class="min">BLK</th>
+            <th class="min">TOV</th>
+            <th class="min">PF</th>
+            <th class="min">PTS</th>
+            <th class="min">FG%</th>
+            <th class="min">FG3%</th>
+            <th class="min">FT%</th>
+            <th class="thDelete"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% statsRes.forEach (res => { %>
+        <tr class='statRow'>
+
+            <td class="tdYear"> <strong> <%= res.year %> </strong> </td>
+
+            <td class='tdStat'><%= res.min%> </td>
+            <td class='tdStat'><%= res.gp %> </td>
+            <td class='tdStat'><%= res.fgm %> </td>
+            <td class='tdStat'><%= res.fga %> </td>
+            <td class='tdStat'><%= res.fg3m %> </td>
+            <td class='tdStat'><%= res.fg3a %> </td>
+            <td class='tdStat'><%= res.ftm %> </td>
+            <td class='tdStat'><%= res.fta %> </td>
+            <td class='tdStat'><%= res.oreb %> </td>
+            <td class='tdStat'><%= res.dreb %> </td>
+            <td class='tdStat'><%= res.reb %> </td>
+            <td class='tdStat'><%= res.ast %> </td>
+            <td class='tdStat'><%= res.stl %> </td>
+            <td class='tdStat'><%= res.blk %> </td>
+            <td class='tdStat'><%= res.tov %> </td>
+            <td class='tdStat'><%= res.pf %> </td>
+            <td class='tdStat'><%= res.pts %> </td>
+            <td class='tdStat'><%= res.fg_pct %> </td>
+            <td class='tdStat'><%= res.fg3_pct %> </td>
+            <td class='tdStat'><%= res.ft_pct %> </td>
+            <td class='deleteStat'>
+                <form action="/players/delete/<%= res.playerId %>/<%= first %>/<%= last %>/<%= res.year %>?_method=DELETE" method="POST"> 
+                <input type="submit" class="deleteButtonStat" value="🗑"></form>
+            </td>
+        </tr>
+
+        <% }) %> 
+    </tbody>
+    <tfoot>
+    </tfoot>
+    </table>
+    </div>
+        
+        <form class="formContainer" action="/players/addseason/<%= id %>/<%= first %>/<%= last %>" method="POST">
+            
+            <input type="integer" class="seasonInput" placeholder="2020" name="season">
+            
+            <input type="submit" class="seasonSubmit go" value="Go!">
+        
+        </form>
+
+</div>
