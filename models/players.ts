@@ -18,10 +18,15 @@ module.exports = (sequelize: any, DataTypes: any) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    firstName: string
-    lastName: string
-    playerId: number
-    team: string
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    firstName!: string;
+    lastName!: string
+    playerId!: number
+    team!: string
     static associate(models: any) {
       // define association here
     }

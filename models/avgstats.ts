@@ -38,29 +38,34 @@ module.exports = (sequelize: any, DataTypes: any) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-     playerId: string
-     year: number
-     min: string
-     gp: number
-     fgm: number
-     fga: number
-     fg3m: number
-     fg3a: number
-     ftm: number
-     fta: number
-     oreb: number
-     dreb: number
-     reb: number
-     ast: number
-     stl: number
-     blk: number
-     tov: number
-     pf: number
-     pts: number
-     fg_pct: number
-     fg3_pct: number
-     ft_pct: number
-    static associate(models) {
+     /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    playerId!: string;
+     year!: number;
+     min!: string;
+     gp!: number;
+     fgm!: number;
+     fga!: number;
+     fg3m!: number;
+     fg3a!: number;
+     ftm!: number;
+     fta!: number;
+     oreb!: number;
+     dreb!: number;
+     reb!: number;
+     ast!: number;
+     stl!: number;
+     blk!: number;
+     tov!: number;
+     pf!: number;
+     pts!: number;
+     fg_pct!: number;
+     fg3_pct!: number;
+     ft_pct!: number;
+    static associate(models: any) {
       // define association here
     }
   };

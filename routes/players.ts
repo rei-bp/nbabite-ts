@@ -1,6 +1,7 @@
 import express from 'express'
 import axios from 'axios'
-import db from '../models'
+const db = require('../models')
+// import db from '../models'
 const router = express.Router()
 
 
