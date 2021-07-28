@@ -1,5 +1,5 @@
 
-const db =require('./models')  
+// const db =require('./models')  
 
 
 // db.players.create({
@@ -8,16 +8,16 @@ const db =require('./models')
 //     playerId: 69696969,
 //     team: 'General Assembly'
 // })
-// db.players.findAll({
-//     attributes: [
-//         'firstName',
-//         'lastName',
-//         'playerId',
-//         'team'
-//     ]
-// }).then( results  => {
-//     console.log(results)
-// })
+// // db.players.findAll({
+// //     attributes: [
+// //         'firstName',
+// //         'lastName',
+// //         'playerId',
+// //         'team'
+// //     ]
+// // }).then( results  => {
+// //     console.log(results)
+// // })
 // db.avgstats.create({
 //         playerId: '69696969',
 //         year: 2020,

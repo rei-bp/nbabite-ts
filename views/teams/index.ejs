@@ -1,0 +1,8 @@
+<div class="teamsIndex">
+    <h1 class="nameTitle">Teams</h1>
+    <div class="resultsContainer">
+       <% apiRes.forEach ( api => { %>
+          <a class="resLink homeLink" href="/teams/<%= api.id %>"><%= api.full_name %> </a>
+          <% }) %>  
+       </div>
+    </div>

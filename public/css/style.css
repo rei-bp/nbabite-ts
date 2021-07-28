@@ -1,0 +1,414 @@
+* {
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+}
+
+
+
+.navHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+
+    position: absolute;
+    background-color: transparent;
+    background-clip: content-box;
+    text-align: left;
+    margin-left: -605px;
+    margin-top: 0px;
+}
+
+.navLink {
+    background-color: transparent;
+    color: #031550;
+    font-style: italic;
+    font-weight: bold;
+    font-size: small;
+    text-decoration: none;
+}
+
+.navLink:hover {
+    color: #fafafa;
+}
+
+.navTitle {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 5em;
+    color: #031550;
+    background-image: url("https://images.unsplash.com/photo-1525973132219-a04334a76080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1277&q=80");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    /* -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px; */
+    height: 110px;
+    width: 800px;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mainTitle {
+    display:flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    /* color: #374d87; */
+    /* background-clip: text;
+    -webkit-background-clip: text; */
+}
+
+.homeLink {
+    margin-bottom: 5px;
+}
+
+.homeP {
+    background-color: transparent;
+    font-style: italic;
+}
+
+.favorites, .playerIndex, .home, .results, .detail, .teamsIndex, .teamsDetail  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 800px;
+    background-color: #a1b2df;
+    border-radius: 20px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+.detailStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: #a1b2df;
+    border-radius: 20px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.resultsSubmit {
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+/* .detailStats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+} */
+
+.teamSpan {
+    font-weight: bold;
+    background-color: transparent;
+    color: #031550;
+}
+
+.teamDiv {
+    background-color: transparent;
+}
+
+.heightDiv {
+    display: block;
+    background-color: transparent;
+    text-align: left;
+}
+
+#heightId {
+    background-color: transparent;
+}
+
+.playerDiv {
+    background-color: transparent;
+    text-align: left;
+}
+
+.seasonInput {
+    width: 50px;
+    border-radius: 20px;
+    border:1px solid #031550;
+    /* font-size: small; */
+    text-align: center;
+}
+
+.go {
+    margin-left: 5px;
+}
+
+.playerInput {
+    border-radius: 20px;
+    border: 1px solid #031550;
+    /* font-size: small; */
+    background-color: #ffffff;
+    text-align: center;
+    padding: 4px 15px;
+}
+
+.seasonSubmit {
+    background-color: #031550;
+    border-radius: 20px;
+    border:1px solid #a1b2df;
+    color: #fafafa;
+    font-style: italic;
+    padding: 4px 15px;
+    
+}
+
+
+.deleteButton {
+    background-color: #031550;
+    border-radius: 20px;
+    border:1px solid #031550;
+    color: #fafafa;
+    /* font-size: small; */
+}
+
+.deleteButtonStat {
+    background-color: #031550;
+    border-radius: 20px;
+    border:1px solid #031550;
+    color: #fafafa;
+    /* font-size: small; */
+}
+
+.deleteButton:hover {
+    background-color:#fafafa;
+    border:1px solid #031550;
+    color: #031550;
+} 
+
+.deleteButtonStat:hover {
+    background-color:#fafafa;
+    border:1px solid #031550;
+    color: #031550;
+    /* font-size: small; */
+}
+
+.seasonSubmit:hover {
+    background-color: #fafafa;
+    border:1px solid #fafafa;
+    color: #031550;
+}
+
+
+table {
+    text-align: center;
+    font-size: small;
+    border-collapse: collapse;
+    border-left:.5px solid #031550;
+    background-color: #a1b2df;
+}
+
+th {
+    padding: 10px;
+    border-bottom: .5px solid #031550;
+    border-right: .5px solid #031550;
+    background-color: #c7d0d6;
+}
+
+.tdYear {
+    background-color: #fafafa;
+    border-left-color: #031550;
+}
+
+/* .deleteStat {
+    border-right-color: #a1b2df;
+} */
+
+.thDelete {
+    width: 40px;
+}
+
+td {
+    padding: 5px;
+    font-size: .9rem;
+    font-weight: bold;
+    border-bottom: .5px solid #031550;
+    border-right: .5px solid #031550;
+    /* font-size: small; */
+}
+
+.min {
+    width: 30px;
+}
+
+.tdStat:hover {
+    background-color: #031550;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fafafa;
+    padding: 0;
+}
+
+
+input::placeholder {
+    text-align: center;
+}
+
+a {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#fafafa;
+    text-decoration: underline;
+}
+
+caption {
+    /* text-align: left; */
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+    color: #fafafa;
+    border:.5px solid #031550;
+    background-color: #031550;
+    height: 30px;
+    align-content: center;
+    align-items: center;
+    /* padding-top: 4px;
+    padding-left: 3px; */
+    padding: 5px 0;
+}
+
+.nameTitle {
+    font-size: 3rem;
+    text-align: center;
+    color: #031550;
+    font-style: italic;
+    border-bottom: 3px solid hsl(230, 100%, 96%);
+    background-color: transparent;
+    /* padding: 0 70px; */
+    width: 720px;
+
+}
+
+.table {
+    justify-content: center;
+}
+
+.statContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.statContainer::-webkit-scrollbar {
+    width:6px;border-left:1px solid #031550;
+}
+.statContainer::-webkit-scrollbar-thumb{
+    background-color:#a1b2df;
+}
+
+.formContainer {
+    display: flex;
+    background-color: transparent;
+    margin-top: 10px;
+}
+
+.playerSearch {
+    background-color: transparent;
+}
+
+.playerForm {
+    background-color: transparent;
+}
+
+.resultsForm {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.resultsContainer {
+    display: flex;
+    background-color: transparent;
+    padding-bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resLink {
+    background-color: #031550;
+    color: #fafafa;
+    border-radius: 20px;
+    height: 20px;
+    padding: 4px 15px;
+}
+
+.resLink:hover {
+    background-color: #fafafa;
+    color: #031550;
+    text-decoration: none;
+}
+
+
+.teamResults {
+    background-color: transparent;
+    padding: 2px 0;
+    font-style: italic;
+}
+
+#resultsLink {
+    background-color: #fafafa;
+    color: #031550;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    display: flex;
+    min-width: 150px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#resultsLink:hover {
+    background-color: #031550;
+    color: #fafafa;
+}
+
+.detailDiv {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.detailForm {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    margin-top: -5px;
+}
+
+.detailTitle {
+    margin-bottom: -6px;
+}

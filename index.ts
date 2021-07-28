@@ -4,10 +4,7 @@ import express from 'express'
 import ejs from 'ejs'
 import layouts from 'express-ejs-layouts'
 import axios from 'axios'
-// import methodOverride from 'method-override'
-// const ejs = require('ejs')
-// const layouts = require('express-ejs-layouts')
-// const axios = require('axios')
+
 const methodOverride = require('method-override')
 
 //config
@@ -21,10 +18,10 @@ app.use(express.static(__dirname + '/public/'))
 app.use(methodOverride('_method'))
 
 //controllers
-// app.use('/teams', require('./routes/teams'))
+app.use('/teams', require('./routes/teams'))
 app.use('/players', require('./routes/players'))
-// app.use('/favorites', require('./routes/favorites'))
-// app.use('/fantasy', require('./routes/fantasy')) 
+app.use('/favorites', require('./routes/favorites'))
+
 
 
 

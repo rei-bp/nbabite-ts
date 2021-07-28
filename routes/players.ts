@@ -10,11 +10,12 @@ router.get('/', (req: any, res: any) => {
 
 
 router.get('/search', async (req: any, res: any) => {
+    const name: string = req.query.playerName
     try {
-        const api = await axios.get(`https://www.balldontlie.io/api/v1/players/?search=${req.query.playerName}`)
-        const response: [] = api.data.data
+        const api = await axios.get(`https://www.balldontlie.io/api/v1/players/?search=${name}`)
+        const response: []= api.data.data
         res.render('players/results.ejs', { apiRes: response })
-    } catch (err) {
+    } catch (err: unknown) {
         console.log(err)
     }
 })
@@ -31,12 +32,11 @@ router.get('/search', async (req: any, res: any) => {
 
 router.get('/:id', async (req: any, res: any) => {
     try {
-        // console.log(typeof req.params.id)
         const id: string = req.params.id
         const api = await axios.get(`https://www.balldontlie.io/api/v1/players/${id}`)
         const response: [] = api.data
         res.render('players/detail.ejs', { resOne: response })
-    } catch (err) {
+    } catch (err: unknown) {
         console.log(err)
     }
 })
@@ -61,32 +61,54 @@ router.post('/addseason/:id/:first/:last', async (req: any, res: any) => {
     try {
         const api = await axios.get(`https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${id}&season=${season}`)
         const addStats = api.data.data[0]
+        const year: number = addStats.season
+        const min: string = addStats.min
+        const gp: number =  addStats.games_played
+        const fgm: number =  addStats.fgm
+        const fga: number =  addStats.fga
+        const fg3m: number =  addStats.fg3m
+        const fg3a: number =  addStats.fg3a
+        const ftm: number =  addStats.ftm
+        const fta: number =  addStats.fta
+        const oreb: number =  addStats.oreb
+        const dreb: number =  addStats.dreb
+        const reb: number =  addStats.reb
+        const ast: number =  addStats.ast
+        const stl: number =  addStats.stl
+        const blk: number =  addStats.blk
+        const tov:  number = addStats.turnover
+        const pf: number =  addStats.pf
+        const pts: number =  addStats.pts
+        const fg_pct: number =  addStats.fg_pct
+        const fg3_pct: number =  addStats.fg3_pct
+        const ft_pct: number =  addStats.ft_pct
+
         db.avgstats.create({
             playerId: id,
-            year: addStats.season,
-            min: addStats.min,
-            gp: addStats.games_played,
-            fgm: addStats.fgm,
-            fga: addStats.fga,
-            fg3m: addStats.fg3m,
-            fg3a: addStats.fg3a,
-            ftm: addStats.ftm,
-            fta: addStats.fta,
-            oreb: addStats.oreb,
-            dreb: addStats.dreb,
-            reb: addStats.reb,
-            ast: addStats.ast,
-            stl: addStats.stl,
-            blk: addStats.blk,
-            tov: addStats.turnover,
-            pf: addStats.pf,
-            pts: addStats.pts,
-            fg_pct: addStats.fg_pct,
-            fg3_pct: addStats.fg3_pct,
-            ft_pct: addStats.ft_pct
+            year: year,
+            min: min,
+            gp: gp,
+            fgm: fgm,
+            fga: fga,
+            fg3m: fg3m,
+            fg3a: fg3a,
+            ftm: ftm,
+            fta: fta,
+            oreb: oreb,
+            dreb: dreb,
+            reb: reb,
+            ast: ast,
+            stl: stl,
+            blk: blk,
+            tov: tov,
+            pf: pf,
+            pts:pts,
+            fg_pct: fg_pct,
+            fg3_pct: fg3_pct,
+            ft_pct: ft_pct
         })
         res.redirect(`/players/showseason/${id}/${first}/${last}`)
-    } catch (err) {
+    } catch (err: unknown) {
         console.log(err)
     }
 })
@@ -139,13 +161,13 @@ router.post('/addseason/:id/:first/:last', async (req: any, res: any) => {
         const last: string = req.params.last
 
         try {
-            const getData = await db.avgstats.findAll({
+            const getData: [] = await db.avgstats.findAll({
                 where: {
                     playerId: id
                 }
             })
             res.render('players/detailstats.ejs', {statsRes: getData, id, first, last })
-        } catch (err) {
+        } catch (err: unknown) {
             console.log(err)
         }
     })
@@ -179,10 +201,10 @@ router.post('/addseason/:id/:first/:last', async (req: any, res: any) => {
                     year: year
                 }
             })
-        } catch (err) {
+        res.redirect(`/players/showseason/${id}/${first}/${last}`)
+        } catch (err: unknown) {
             console.log(err)
         }
-        res.redirect(`/players/showseason/${id}/${first}/${last}`)
     })
 
     //THEN FORMAT
